@@ -27,6 +27,19 @@ public class User {
         return "" + id + " - " + name + " " + lastName + ", " + age;
     }
 
+    @Override
+    public int hashCode() {
+        return 31 * id.hashCode() * (name.hashCode() + lastName.hashCode());
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        User user = (User) obj;
+        return (id.equals(user.getId()) && name.equals(user.getName()) && lastName.equals(user.getLastName()) && age == user.getAge());
+    }
+
     public User(String name, String lastName, Byte age) {
         this.name = name;
         this.lastName = lastName;
