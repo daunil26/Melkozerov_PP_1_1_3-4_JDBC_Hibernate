@@ -14,13 +14,13 @@ public class Main {
         userService.saveUser("Danil", "Melkozerov", (byte) 23);
         userService.saveUser("Andrey", "Agapitov", (byte) 35);
         userService.saveUser("Igor", "Petrov", (byte) 18);
-        userService.saveUser("Anna", "Ivanova", (byte) 46);
+        userService.saveUser("Ivan", "Bagaev", (byte) 46);
         List<User> userList = userService.getAllUsers();
         for (User user:userList) {
             System.out.println(user.toString());
         }
         userService.cleanUsersTable();
         userService.dropUsersTable();
-        new Util().closeConnection();
+        //new Util().closeConnection();
     }
 }
